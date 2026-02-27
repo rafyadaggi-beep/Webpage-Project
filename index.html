@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafya's Webpage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #d0e4f7;
+            /* Polka dot background from design */
+            background-image: radial-gradient(#ffffff 20%, transparent 20%);
+            background-size: 50px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 1. LACE BORDER */
+        .header-lace {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background: url('header.png') repeat-x;
+            background-size: contain;
+            z-index: 100;
+        }
+
+        /* 2. MAIN CARD CONTAINER */
+        .main-card {
+            background-color: rgba(141, 169, 190, 0.9);
+            width: 90%;
+            max-width: 850px; /* Wider for desktop layout */
+            padding: 50px;
+            border-radius: 40px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 100px 20px;
+            display: flex;
+            flex-direction: row; /* Side-by-side on desktop */
+            align-items: flex-start;
+            gap: 40px;
+        }
+       
+               /* PHOTO FIT */
+        .actual-photo {
+            position: absolute;
+            top: 28%;    /* Centers photo in the frame hole */
+            left: 30%;
+            width: 150px;  /* Fills the hole without zooming too much */
+            height: 198px;
+            object-fit: cover;
+            border-radius: 40px;
+            z-index: 4;
+        }
+	.tamagotchi-frame {
+            width: 400px;
+	    height: auto;
+            position: relative;
+            z-index: 5;
+        }
+
+
+	 /* 3. BIGGER PFP SECTION */
+        .pfp-section {
+            position: relative;
+            flex-shrink: 0;
+            margin-top: -80px; /* Floats it up slightly */
+            margin-left: -70px; /* Floats it left */
+        }
+
+
+        /* 4. CONTENT AREA */
+        .content {
+            flex: 1;
+            color: white;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            margin: 0 0 20px 0;
+            font-family: 'Brush Script MT', cursive;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .info-list p {
+            margin: 12px 0;
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .label {
+            font-weight: 700;
+            color: #d1e3f0;
+        }
+
+        /* 5. BLA BLA BOX */
+        .bla-section {
+            margin-top: 30px;
+        }
+
+        .bla-box {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 25px;
+            font-size: 3rem;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* 6. DECORATIONS */
+        .bow {
+            position: absolute;
+            top: 30px;
+            right: -20px;
+            width: 90px;
+            z-index: 10;
+        }
+
+        .thegang {
+            position: absolute;
+            bottom: -40px;
+            right: 20px;
+            width: 220px;
+            z-index: 10;
+        }
+
+        .bubbles {
+            position: fixed;
+            left: 10px;
+            bottom: 100px;
+            width: 120px;
+            pointer-events: none;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 850px) {
+            .main-card {
+                flex-direction: column;
+                align-items: center;
+                padding: 30px;
+                margin-top: 80px;
+            }
+            .pfp-section {
+                margin: 0 auto 20px auto;
+                width: 250px;
+            }
+            .content {
+                text-align: center;
+            }
+            .main-title {
+                text-align: center;
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-lace"></div>
+
+    <div class="main-card">
+        <div class="pfp-section">
+            <img src="frame.png" class="tamagotchi-frame" alt="Frame">
+            <img src="me.png" class="actual-photo" alt="Rafya">
+        </div>
+
+        <img src="bow.png" class="bow" alt="Bow">
+
+        <div class="content">
+            <h1 class="main-title">All about me!</h1>
+            
+            <div class="info-list">
+                <p><span class="label">Name:</span> Rafya A. Daggi</p>
+                <p><span class="label">Age:</span> 15 years old</p>
+                <p><span class="label">D.O.B:</span> July 6, 2010</p>
+                <p><span class="label">Address:</span> Zamboanga City, Philippines</p>
+                <hr style="opacity: 0.3; margin: 20px 0;">
+                <p><span class="label">Likes:</span> Cats, Video Games, Anime, Kdramas & Spicy food</p>
+                <p><span class="label">Dislikes:</span> Noisy people, Romance Novels, Messy areas, Long Pacing shows/movies & Bitter food :)</p>
+            </div>
+
+            <div class="bla-section">
+                <h2 style="font-size: 1.5rem; margin-bottom: 10px;">More About Me!</h2>
+                <div class="bla-box">
+                    Bla bla<br>bla bla
+                </div>
+            </div>
+        </div>
+
+        <img src="thegang.png" class="thegang" alt="Characters">
+    </div>
+
+    <img src="bubbles.png" class="bubbles" alt="Bubbles">
+
+</body>
+</html>
